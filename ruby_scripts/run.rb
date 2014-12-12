@@ -14,4 +14,4 @@ def fetch(uri_str, limit = 20)
   end
 end
 
-puts fetch(ARGV[0])
+puts "{\"url\": \"#{fetch(ARGV[0])}\"}"
