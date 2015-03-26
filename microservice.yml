@@ -1,0 +1,24 @@
+microservice:
+  name: 'URL-Lengthener-Ruby'
+  description: 'lengthens a URL by following all redirects to get the final URL'
+  docker_image: 'cloudspace/lengthener-ruby'
+  docker_image_tag: '0.4'
+  github_url: 'https://github.com/cloudspace/docker-lengthener-ruby'
+  docker_hub_url: 'https://registry.hub.docker.com/u/cloudspace/lengthener-ruby/tags/manage/'
+  category: 'url'
+  tags: ['url', 'lengthen']
+  developer_name: 'test'
+  developer_type: 'User'
+  published: true
+  command: '/.rbenv/versions/2.1.2/bin/ruby /run.rb [url]'
+  inputs:
+    url:
+      param_type: 'Url'
+      regex: '^https?:\\/\\/[\\S]+$'
+      required: true
+      secure: false
+      description: 'url to be lengthened'
+  outputs:
+    url:
+      param_type: 'Url'
+      description: 'the lengthened url for the supplied url'
